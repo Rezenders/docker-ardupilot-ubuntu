@@ -29,5 +29,8 @@ RUN pip install pymavlink \
 ENV PATH=$PATH:/ardupilot/Tools/autotest
 ENV PATH=/usr/lib/ccache:$PATH
 
+# Add location
+RUN echo "UFSC=-27.604033,-48.518363,21,0" >> /ardupilot/Tools/autotest/locations.txt
+
 CMD ["bash"]
 
