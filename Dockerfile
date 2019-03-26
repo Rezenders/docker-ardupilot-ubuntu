@@ -25,9 +25,12 @@ WORKDIR /
 # Complete ardupilot install
 RUN pip install pymavlink \
 	MAVProxy
-
+RUN ["/bin/bash","-c","echo 'UFSC=-27.604033,-48.518363,21,0' >> /ardupilot/Tools/autotest/locations.txt"]
 ENV PATH=$PATH:/ardupilot/Tools/autotest
 ENV PATH=/usr/lib/ccache:$PATH
+
+WORKDIR /ardupilot
+RUN ["/bin/bash","-c","./waf configure && make copter"]
 
 CMD ["bash"]
 
