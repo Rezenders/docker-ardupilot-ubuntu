@@ -13,6 +13,9 @@ http://wiki.ros.org/docker/Tutorials/Hardware%20Acceleration#nvidia-docker2
 
 https://github.com/NVIDIA/nvidia-docker
 
+### Dependencies
+- https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)
+
 ```
 ENV NVIDIA_VISIBLE_DEVICES \
    ${NVIDIA_VISIBLE_DEVICES:-all}
